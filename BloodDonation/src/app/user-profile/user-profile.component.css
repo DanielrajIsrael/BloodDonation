@@ -1,0 +1,8 @@
+.box{
+    background: rgba(105, 23, 23, 0.484);
+    padding: 10px;
+    border-radius: 10px;
+}
+.profile{
+    border-radius: 20px;
+}

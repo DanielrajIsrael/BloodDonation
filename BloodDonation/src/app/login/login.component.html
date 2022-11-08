@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">
+            <img src="https://media.istockphoto.com/vectors/blood-donation-vector-illustration-with-red-heart-and-drop-counter-vector-id876847622?k=20&m=876847622&s=612x612&w=0&h=coRMz2RqdEMXeOgVmuJG0T4kgZ0L_yGS6PxJyG4u1qo="
+                class="img-fluid rounded-top" alt="">
+        </div>
+        <div class="col">
+            <div class="container box">
+                <h1 style="color: red;" class="text-center">Login</h1>
+                <div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="email" id="email" required
+                            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                            aria-describedby="helpId" placeholder="Email" [(ngModel)]="loginData.email"
+                            #email="ngModel">
+                        <small class="text-danger" *ngIf="email.touched && loginData.email==empty">*Email
+                            required</small>
+                        <small class="text-danger" *ngIf="loginData.email!=empty && email.invalid">*Invaid
+                            Email..!</small>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="password"
+                                aria-describedby="helpId" placeholder="Password" [(ngModel)]="loginData.password"
+                                max="3" #password="ngModel">
+                            <small class="text-danger" *ngIf="password.touched && loginData.password==empty">*Password
+                                required</small>
+                            <small class="text-danger"
+                                *ngIf="loginData.password!=empty && loginData.password.length<3">*Invalid
+                                password</small>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="color: royalblue;" *ngIf="checkNull==true">*Enter Email and Password</p>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-danger" (click)="login()">Login</button>
+                    </div>
+                    <br>
+                    <div>
+                        <p>Don't have an account? <a style="color: red;" routerLink="register">Register</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

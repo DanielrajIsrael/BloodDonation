@@ -1,0 +1,104 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">
+            <div class="container box">
+                <h1 style="color: red;">Register</h1>
+                <form [formGroup]="user" (ngSubmit)="save()">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" aria-describedby="helpId"
+                                    placeholder="Name" formControlName="name">
+                                <small class="red" *ngIf="user.get('name')?.invalid" >*Invalid Name </small>
+                            </div> 
+                            
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Email</label>
+                                <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                    placeholder="Email" formControlName="email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="" class="form-label">DOB</label>
+                                <input type="date" class="form-control" name="" id="" aria-describedby="helpId"
+                                    placeholder="DOB" formControlName="dob">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Blood Group</label>
+                                <select name="" id="" class="form-select" formControlName="bloodGroup">
+                                    <option>-Select BloodGroup-</option>
+                                    <option>O +ve</option>
+                                    <option>O -ve</option>
+                                    <option>A +ve</option>
+                                    <option>A -Ve</option>
+                                    <option>B +ve</option>
+                                    <option>B -ve</option>
+                                    <option>AB +ve</option>
+                                    <option>AB -ve</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Number</label>
+                                <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                    placeholder="Number" formControlName="number">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Alternate Number</label>
+                                <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                    placeholder="Alternate Number" formControlName="alternativeNumber">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="" id="" aria-describedby="helpId"
+                                    placeholder="Password" formControlName="password">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" name="" id="" aria-describedby="helpId"
+                                    placeholder="Confirm Password" formControlName="confirmPassword">
+                                <p *ngIf="checkPassword==true" style="color: red;">* Password and confirm password must
+                                    be
+                                    same</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="">Address</label>
+                        <textarea class="form-control" name="discription" id="Description" rows="2"
+                            formControlName="address"></textarea>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-danger">Register</button>
+                    </div>
+                </form>
+                <p>Do have an account?<a style="color: red;" routerLink="">Login</a> </p>
+            </div>
+        </div>
+        <div class="col">
+            <img src="https://us.123rf.com/450wm/laracold/laracold1706/laracold170600016/80351479-creative-blood-motivation-information-donor-poster-blood-donation-world-blood-donor-day-banner-red-b.jpg?ver=6"
+                class="img-fluid rounded-top" alt="">
+        </div>
+
+    </div>
+</div>

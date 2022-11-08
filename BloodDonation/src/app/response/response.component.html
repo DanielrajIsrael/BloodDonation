@@ -1,0 +1,90 @@
+<br>
+<div class="box-B">
+    <button type="button" class="btn btn-primary" (click)="response()">Responded</button>
+    <button type="button" class="btn btn-primary" (click)="pending()">Pending..</button>
+</div>
+<br>
+<div class="container-fluid" *ngIf="check==true">
+    <h2>Response</h2>
+    <br>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">Hospital Name</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Blood Need</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Response</th>
+                        <th scope="col">Responsed UserName</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="" *ngFor="let response of respondedRequest|paginate : {
+                        itemsPerPage: tableSize,
+                        currentPage: page,
+                        totalItems: count
+                      }; let index=index">
+                        <td scope="row">{{index+1}}</td>
+                        <td >{{response.hospitalName}}</td>
+                        <td>{{response.contactNumber}}</td>
+                        <td>{{response.bloodNeed}}</td>
+                        <td>{{response.status}}</td>
+                        <td>{{response.response}}</td>
+                        <td>{{response.responseUserName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                <pagination-controls
+                  previousLabel="Prev"
+                  nextLabel="Next"
+                  (pageChange)="onTableDataChange($event)">
+                </pagination-controls>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" *ngIf="check==false">
+    <h2>Pending..</h2>
+    <br>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">Hospital Name</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Blood Need</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Response</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="" *ngFor="let response of pendingRequest|paginate : {
+                        itemsPerPage: tableSize,
+                        currentPage: page,
+                        totalItems: count
+                      }; let index=index">
+                        <td scope="row">{{index+1}}</td>
+                        <td>{{response.hospitalName}}</td>
+                        <td>{{response.contactNumber}}</td>
+                        <td>{{response.bloodNeed}}</td>
+                        <td>{{response.status}}</td>
+                        <td>{{response.response}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                <pagination-controls
+                  previousLabel="Prev"
+                  nextLabel="Next"
+                  (pageChange)="onTableDataChange($event)">
+                </pagination-controls>
+              </div>
+        </div>
+    </div>
+</div>

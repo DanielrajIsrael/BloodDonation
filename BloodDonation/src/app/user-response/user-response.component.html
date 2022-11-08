@@ -1,0 +1,28 @@
+<br>
+<div class="container">
+    <h2>Responded</h2>
+    <div class="container">
+        <h5 *ngIf="check==true" class="text-center">You did'nt responded any request</h5>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let data of tempRequest" class="col">
+                <div class="card" style="width: 18rem; ">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3595/3595798.png?"
+                        class="card-img-top w-50 mx-auto" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Need : {{data.bloodNeed}}</h5>
+                        <p class="card-text">{{data.hospitalName}}</p>
+                        <p>Contact Number:{{data.contactNumber}}</p>
+                        <p>Status : {{data.status}}</p>
+                        <input type="hidden" name="id" [value]="data.id" #id>
+                        <input type="hidden" [value]="data|json" #sample name="sample">
+                        <a class="btn btn-danger disable">Accepted</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
